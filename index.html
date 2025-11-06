@@ -25,16 +25,16 @@
 
     <!-- 카메라 게임 화면 -->
     <div id="game-screen" class="screen">
+        <div class="game-info">
+            <div class="timer">시간: <span id="countdown">5</span>초</div>
+            <div class="progress">진행: <span id="current-shot">0</span> / 10</div>
+            <div class="status" id="status">준비 중...</div>
+        </div>
+
         <div class="camera-container">
             <video id="video" autoplay playsinline></video>
             <canvas id="overlay"></canvas>
             <div id="random-box" class="box"></div>
-
-            <div class="game-info">
-                <div class="timer">시간: <span id="countdown">5</span>초</div>
-                <div class="progress">진행: <span id="current-shot">0</span> / 10</div>
-                <div class="status" id="status">준비 중...</div>
-            </div>
         </div>
     </div>
 
