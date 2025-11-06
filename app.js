@@ -132,28 +132,28 @@ function createRandomBox() {
 
     switch(gameState.targetPersonCount) {
         case 3:
-            minSizeRatio = 0.3;  // 30%
-            maxSizeRatio = 0.6;  // 60%
+            minSizeRatio = 0.25; // 25%
+            maxSizeRatio = 0.45; // 45%
             break;
         case 4:
             minSizeRatio = 0.35; // 35%
-            maxSizeRatio = 0.65; // 65%
+            maxSizeRatio = 0.55; // 55%
             break;
         case 5:
-            minSizeRatio = 0.4;  // 40%
-            maxSizeRatio = 0.7;  // 70%
+            minSizeRatio = 0.45; // 45%
+            maxSizeRatio = 0.65; // 65%
             break;
         case 6:
-            minSizeRatio = 0.45; // 45%
+            minSizeRatio = 0.55; // 55%
             maxSizeRatio = 0.75; // 75%
             break;
         case 7:
-            minSizeRatio = 0.5;  // 50%
-            maxSizeRatio = 0.8;  // 80%
+            minSizeRatio = 0.65; // 65%
+            maxSizeRatio = 0.85; // 85%
             break;
         default:
-            minSizeRatio = 0.3;
-            maxSizeRatio = 0.6;
+            minSizeRatio = 0.25;
+            maxSizeRatio = 0.45;
     }
 
     const minSize = Math.min(videoWidth, videoHeight) * minSizeRatio;
