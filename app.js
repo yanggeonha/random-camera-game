@@ -127,41 +127,35 @@ function createRandomBox() {
     const videoWidth = video.offsetWidth;
     const videoHeight = video.offsetHeight;
 
-    // 인원 수에 따라 박스 크기 범위 설정
-    let minSizeRatio, maxSizeRatio;
+    // 인원 수에 따라 고정된 박스 크기 비율 설정
+    let sizeRatio;
 
     switch(gameState.targetPersonCount) {
         case 3:
-            minSizeRatio = 0.25; // 25%
-            maxSizeRatio = 0.45; // 45%
+            sizeRatio = 0.40; // 40%
             break;
         case 4:
-            minSizeRatio = 0.35; // 35%
-            maxSizeRatio = 0.55; // 55%
+            sizeRatio = 0.50; // 50%
             break;
         case 5:
-            minSizeRatio = 0.45; // 45%
-            maxSizeRatio = 0.65; // 65%
+            sizeRatio = 0.60; // 60%
             break;
         case 6:
-            minSizeRatio = 0.55; // 55%
-            maxSizeRatio = 0.75; // 75%
+            sizeRatio = 0.70; // 70%
             break;
         case 7:
-            minSizeRatio = 0.65; // 65%
-            maxSizeRatio = 0.85; // 85%
+            sizeRatio = 0.80; // 80%
             break;
         default:
-            minSizeRatio = 0.25;
-            maxSizeRatio = 0.45;
+            sizeRatio = 0.40;
     }
 
-    const minSize = Math.min(videoWidth, videoHeight) * minSizeRatio;
-    const maxSize = Math.min(videoWidth, videoHeight) * maxSizeRatio;
-    const boxWidth = Math.random() * (maxSize - minSize) + minSize;
-    const boxHeight = boxWidth * (0.8 + Math.random() * 0.4); // 가로세로 비율 약간 다르게
+    // 고정된 크기로 정사각형 박스 생성
+    const boxSize = Math.min(videoWidth, videoHeight) * sizeRatio;
+    const boxWidth = boxSize;
+    const boxHeight = boxSize;
 
-    // 박스 위치 (화면 안에 들어오도록)
+    // 박스 위치만 랜덤으로 (화면 안에 들어오도록)
     const maxX = videoWidth - boxWidth;
     const maxY = videoHeight - boxHeight;
     const boxX = Math.random() * maxX;
