@@ -127,27 +127,27 @@ function createRandomBox() {
     const videoWidth = video.offsetWidth;
     const videoHeight = video.offsetHeight;
 
-    // 인원 수에 따라 고정된 박스 크기 비율 설정
+    // 인원 수에 따라 고정된 박스 크기 비율 설정 (모바일에 맞게 크게 조정)
     let sizeRatio;
 
     switch(gameState.targetPersonCount) {
         case 3:
-            sizeRatio = 0.40; // 40%
+            sizeRatio = 0.75; // 75%
             break;
         case 4:
-            sizeRatio = 0.50; // 50%
-            break;
-        case 5:
-            sizeRatio = 0.60; // 60%
-            break;
-        case 6:
-            sizeRatio = 0.70; // 70%
-            break;
-        case 7:
             sizeRatio = 0.80; // 80%
             break;
+        case 5:
+            sizeRatio = 0.85; // 85%
+            break;
+        case 6:
+            sizeRatio = 0.90; // 90%
+            break;
+        case 7:
+            sizeRatio = 0.95; // 95%
+            break;
         default:
-            sizeRatio = 0.40;
+            sizeRatio = 0.75;
     }
 
     // 고정된 크기로 정사각형 박스 생성
